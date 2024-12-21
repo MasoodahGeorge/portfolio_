@@ -369,6 +369,23 @@
   opacity: 1;
 }
 
+footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  @media (max-width: 768px) {
+    footer .row {
+      flex-direction: column;
+    }
+
+    footer .col-md-6 {
+      margin-bottom: 10px;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -376,7 +393,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a class="navbar-brand" href="#">mg</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="color: #fff;">
+    <button class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -391,6 +408,7 @@
     </div>
   </div>
 </nav>
+
 
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -411,7 +429,7 @@
         <h2>About Me</h2>
         <p>
           As a passionate web developer, I am dedicated to continually expanding my skill set in the dynamic world of technology. With a strong foundation in HTML, CSS, and Bootstrap, I have honed my abilities in JavaScript and Vue.js, alongside backend development with Node.js and MySQL. I thrive on creating efficient, user-friendly web applications and am eager to contribute to innovative projects in the web development landscape.
-        </p>
+        </p><p>Im going to be okay. qwenchana qwenchanaa. nancharagoisweo! yeah!</p>
       </div>
     </div>
   </div>
@@ -663,6 +681,18 @@
   </div>
 </section>
 
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center text-md-start">
+        <p>&copy; 2024 Masoodah George. All Rights Reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#home" class="btn btn-outline-dark" id="back-to-top" style="background-color: transparent; border-radius: 0; border-color: #ccc; color: #ccc;">Back to Top</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 
@@ -676,6 +706,26 @@
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggler = document.querySelector(".navbar-toggler");
+    const menu = document.querySelector("#navbarNav");
+
+    toggler.addEventListener("click", function () {
+      menu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!menu.contains(e.target) && !toggler.contains(e.target)) {
+        menu.classList.remove("show");
+      }
+    });
+  });
+
+// document.getElementById('back-to-top').addEventListener('click', function (e) {
+//     e.preventDefault();
+//     window.scrollTo({ top: 0, behavior: 'smooth' });
+//   });
 
 </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
