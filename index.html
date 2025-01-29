@@ -220,6 +220,25 @@
   transform: scale(1.1);
 }
 
+.skills-section {
+  text-align: center; /* Center text inside the section */
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Add space between items */
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items inside each skill box */
+  text-align: center;
+  padding: 2rem;
+}
+
 #canva{
   width: 50px;
 }
@@ -386,6 +405,68 @@ footer {
     }
   }
 
+  #cvbut{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  #cvbut:hover{
+    background-color: #fcff67;
+    color: #333;
+  }
+
+  #mailbut{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  #mailbut:hover{
+    background-color: #fcff67;
+    color: #333;
+  }
+
+  #back-to-top{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  #back-to-top:hover{
+    background-color: #fcff67;
+    color: #333;
+  }
+
+  .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.skill-item {
+  text-align: center;
+  padding: 20px;
+  width: 120px;
+  margin: auto;  /* Ensures it's centered inside flex container */
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  filter: invert(1); /* Makes arrows visible on light backgrounds */
+}
+
   </style>
 </head>
 <body>
@@ -430,10 +511,12 @@ footer {
         <p>
           As a passionate web developer, I am dedicated to continually expanding my skill set in the dynamic world of technology. With a strong foundation in HTML, CSS, and Bootstrap, I have honed my abilities in JavaScript and Vue.js, alongside backend development with Node.js and MySQL. I thrive on creating efficient, user-friendly web applications and am eager to contribute to innovative projects in the web development landscape.
         </p>
+        <a href="https://drive.google.com/file/d/1tmNGA9_yrZRowwXIM13SRj8i4jmZ71CA/view?usp=sharing" class="btn btn-primary mt-3" id="cvbut" target="_blank">My CV</a>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Resume Section -->
 <section id="resume">
@@ -490,32 +573,30 @@ footer {
 
   <BR></BR>
   <h4>DEVELOPMENT</h4>
+<!-- Normal Grid Layout (Shown on Large Screens) -->
+<div class="skills-container d-none d-md-flex">
+  <div class="skill-item"><i class="fab fa-html5"></i><h3>HTML 5</h3></div>
+  <div class="skill-item"><i class="fab fa-css3-alt"></i><h3>CSS</h3></div>
+  <div class="skill-item"><i class="fab fa-js"></i><h3>Javascript</h3></div>
+  <div class="skill-item"><i class="fas fa-database"></i><h3>MySQL</h3></div>
+  <div class="skill-item"><i class="fab fa-vuejs"></i><h3>Vue JS</h3></div>
+  <div class="skill-item"><i class="fab fa-node-js"></i><h3>Node JS</h3></div>
+  <div class="skill-item"><i class="fab fa-wordpress"></i><h3>WordPress</h3></div>
+</div>
+<!-- Bootstrap Carousel (Only for Small Screens) -->
+<div id="skillsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active"><div class="skill-item"><i class="fab fa-html5"></i><h3>HTML 5</h3></div></div>
+    <div class="carousel-item"><div class="skill-item"><i class="fab fa-css3-alt"></i><h3>CSS</h3></div></div>
+    <div class="carousel-item"><div class="skill-item"><i class="fab fa-js"></i><h3>Javascript</h3></div></div>
+    <div class="carousel-item"><div class="skill-item"><i class="fas fa-database"></i><h3>MySQL</h3></div></div>
+    <div class="carousel-item"><div class="skill-item"><i class="fab fa-vuejs"></i><h3>Vue JS</h3></div></div>
+    <div class="carousel-item"><div class="skill-item"><i class="fab fa-node-js"></i><h3>Node JS</h3></div></div>
+    <div class="carousel-item"><div class="skill-item"><i class="fab fa-wordpress"></i><h3>WordPress</h3></div></div>
+  </div>
+</div>
 
-  <div class="skills-container">
-    <div class="skill-item">
-      <i class="fab fa-html5"></i>
-      <h3>HTML 5</h3>
-    </div>
-    <div class="skill-item">
-      <i class="fab fa-css3-alt"></i>
-      <h3>CSS</h3>
-    </div>
-    <div class="skill-item">
-      <i class="fab fa-js"></i>
-      <h3>Javascript</h3>
-    </div>
-    <div class="skill-item">
-      <i class="fas fa-database"></i>
-      <h3>MySQL</h3>
-    </div>
-    <div class="skill-item">
-      <i class="fab fa-vuejs"></i>
-      <h3>Vue JS</h3>
-    </div>
-    <div class="skill-item">
-      <i class="fab fa-node-js"></i>
-      <h3>Node JS</h3>
-    </div>
+
     </div>
 
     <BR></BR>
@@ -539,7 +620,7 @@ footer {
     <div class="skill-item">
       <i class="fab fa-aws"></i>
       <h3>AWS Certificates</h3>
-      <a href="https://docs.google.com/document/d/1RxBPy071l1eqAnh8-2YJevExstTlwyCyn2fDA6op1gQ/edit?usp=sharing" target="_blank" style="text-decoration: none;">View</a>
+      <a href="https://drive.google.com/file/d/1OYs3RRipKzlWK9t9mUyDfTnKCypTc5y-/view?usp=sharing" target="_blank" style="text-decoration: none;">View</a>
       <div id="pdfModal" style="display:none;">
         <div id="modalContent" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 1000;">
           <div style="position: relative; background-color: white; width: 80%; height: 80%;">
@@ -552,7 +633,7 @@ footer {
     <div class="skill-item">
       <i class="fas fa-network-wired"></i>
       <h3>CISCO Badges</h3>
-      <a href="https://docs.google.com/document/d/1RxBPy071l1eqAnh8-2YJevExstTlwyCyn2fDA6op1gQ/edit?usp=sharing" target="_blank" style="text-decoration: none;">View</a>
+      <a href="https://drive.google.com/file/d/1OYs3RRipKzlWK9t9mUyDfTnKCypTc5y-/view?usp=sharing" target="_blank" style="text-decoration: none;">View</a>
       <div id="pdfModal" style="display:none;">
         <div id="modalContent" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 1000;">
           <div style="position: relative; background-color: white; width: 80%; height: 80%;">
@@ -690,7 +771,7 @@ footer {
       <div class="mb-3">
         <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" style="background-color: #383838; border: #383838;">Send Message</button>
+      <button type="submit" id="mailbut" class="btn btn-primary" ">Send Message</button>
     </form>
     <div class="contact-icons">
       <a href="https://wa.me/27621636155" title="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -707,7 +788,7 @@ footer {
         <p>&copy; 2024 Masoodah George. All Rights Reserved.</p>
       </div>
       <div class="col-md-6 text-center text-md-end">
-        <a href="#home" class="btn btn-outline-dark" id="back-to-top" style="background-color: transparent; border-radius: 0; border-color: #ccc; color: #ccc;">Back to Top</a>
+        <a href="#home" class="btn btn-outline-dark" id="back-to-top">Back to Top</a>
       </div>
     </div>
   </div>
